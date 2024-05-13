@@ -1,0 +1,34 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Godot Voxel Tutorial"
+run/main_scene="res://Main_Scene.tscn"
+config/features=PackedStringArray("4.2")
+config/icon="res://icon.png"
+
+[display]
+
+window/stretch/mode="2d"
+window/size/width=1280
+window/size/height=720
+
+[dotnet]
+
+project/assembly_name="Godot Voxel Tutorial"
+
+[global]
+
+vsync=false
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

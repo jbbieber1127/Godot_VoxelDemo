@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Godot Voxel Tutorial", "Godot Voxel Tutorial.csproj", "{24B0BF65-FD86-45E1-9DB3-512D0B31AE59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24B0BF65-FD86-45E1-9DB3-512D0B31AE59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B0BF65-FD86-45E1-9DB3-512D0B31AE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B0BF65-FD86-45E1-9DB3-512D0B31AE59}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{24B0BF65-FD86-45E1-9DB3-512D0B31AE59}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{24B0BF65-FD86-45E1-9DB3-512D0B31AE59}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{24B0BF65-FD86-45E1-9DB3-512D0B31AE59}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
