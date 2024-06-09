@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://v1psrx4pytm5"]
+[gd_scene load_steps=9 format=3 uid="uid://v1psrx4pytm5"]
 
 [ext_resource type="Texture2D" uid="uid://bt4vkj6lqtxwq" path="res://UI_Assets/Crosshair.png" id="1"]
+[ext_resource type="Script" path="res://Scripts/VoxelWorld.cs" id="1_ha354"]
 [ext_resource type="Texture2D" uid="uid://fr81553uodun" path="res://UI_Assets/Inventory_Slot.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://bp5gae6475dml" path="res://UI_Assets/32-32_white.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://tasa3m104rid" path="res://Voxel_Terrain_System/2D_Assets/Tileset_UI.png" id="4"]
@@ -26,6 +27,7 @@ adjustment_saturation = 1.2
 [node name="Main_Scene" type="Node3D"]
 
 [node name="Voxel_World" type="Node3D" parent="."]
+script = ExtResource("1_ha354")
 
 [node name="Chunks" type="Node3D" parent="Voxel_World"]
 
