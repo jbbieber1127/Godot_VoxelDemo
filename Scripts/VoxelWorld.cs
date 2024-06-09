@@ -8,46 +8,59 @@ public partial class VoxelWorld : Node3D
         {
             "Stone",
             new Voxel() {
-                transparent = false,
-                solid = true,
+                IsTransparent = false,
+                IsSolid = true,
                 texture = new Vector2I(0,0)
             }
         },
         {
             "Bedrock",
             new Voxel() {
-                transparent = false,
-                solid = true,
+                IsTransparent = false,
+                IsSolid = true,
                 texture = new Vector2I(2,0)
             }
         },
         {
             "Cobble",
             new Voxel() {
-                transparent = false,
-                solid = true,
+                IsTransparent = false,
+                IsSolid = true,
                 texture = new Vector2I(1,0)
             }
         },
         {
             "Dirt",
             new Voxel() {
-                transparent = false,
-                solid = true,
+                IsTransparent = false,
+                IsSolid = true,
                 texture = new Vector2I(0,1)
             }
         },
         {
             "Grass",
             new Voxel() {
-                transparent = false,
-                solid = true,
+                IsTransparent = false,
+                IsSolid = true,
                 texture = new Vector2I(0,1),
-                textureTop = new Vector2I(2,1),
-                textureNorth = new Vector2I(1,1),
-                textureSouth = new Vector2I(1,1),
-                textureEast = new Vector2I(1,1),
-                textureWest = new Vector2I(1,1)
+                Textures =
+                {
+                    {
+                        VoxelSide.TOP, new Vector2I(2,1)
+                    },
+                    {
+                        VoxelSide.NORTH, new Vector2I(1,1)
+                    },
+                    {
+                        VoxelSide.SOUTH, new Vector2I(1,1)
+                    },
+                    {
+                        VoxelSide.EAST, new Vector2I(1,1)
+                    },
+                    {
+                        VoxelSide.WEST, new Vector2I(1,1)
+                    }
+                }
             }
         }
     };
@@ -59,7 +72,7 @@ public partial class VoxelWorld : Node3D
     [Export]
     public int VoxelTextureTileSize = 32;
 
-    float _voxelTextureUnit;
+    public float VoxelTextureUnit;
 
     private static ResourcePreloader _rpl;
     private static ResourcePreloader RPL
@@ -85,7 +98,7 @@ public partial class VoxelWorld : Node3D
 
         _chunkHolderNode = (Node3D)GetNode("Chunks");
 
-        _voxelTextureUnit = 1.0f / (VoxelTextureSize / VoxelTextureTileSize);
+        VoxelTextureUnit = 1.0f / (VoxelTextureSize / VoxelTextureTileSize);
 
         foreach (var voxel_name in voxelDictionary.Keys)
         {

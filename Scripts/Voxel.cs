@@ -1,17 +1,23 @@
 ﻿using Godot;
+using Godot.Collections;
 
 namespace GodotVoxelTutorial.Scripts
 {
     public struct Voxel
     {
-        public bool transparent;
-        public bool solid;
+        public bool IsTransparent;
+        public bool IsSolid;
         public Vector2I texture;
-        public Vector2I? textureTop;
-        public Vector2I? textureBottom;
-        public Vector2I? textureNorth;
-        public Vector2I? textureSouth;
-        public Vector2I? textureEast;
-        public Vector2I? textureWest;
+        public Dictionary<VoxelSide, Vector2I> Textures = new();
+    }
+
+    public enum VoxelSide
+    {
+        TOP,
+        BOTTOM, 
+        NORTH, 
+        SOUTH, 
+        EAST,
+        WEST
     }
 }
