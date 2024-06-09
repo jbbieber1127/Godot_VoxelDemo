@@ -174,78 +174,78 @@ public partial class VoxelChunk : Node3D
 
 		if (_getVoxelInBounds(x, y + 1, z))
 		{
-			if (_check_if_voxel_cause_render(x, y + 1, z))
+			if (_checkIfVoxelCausesRender(x, y + 1, z))
 			{
-				make_voxel_face(x, y, z, VoxelSide.TOP);
+				MakeVoxelFace(x, y, z, VoxelSide.TOP);
 			}
 		}
 		else
 		{
-			make_voxel_face(x, y, z, VoxelSide.TOP);
+			MakeVoxelFace(x, y, z, VoxelSide.TOP);
 		}
 
 		if (_getVoxelInBounds(x, y - 1, z))
 		{
-			if (_check_if_voxel_cause_render(x, y - 1, z))
+			if (_checkIfVoxelCausesRender(x, y - 1, z))
 			{
-				make_voxel_face(x, y, z, VoxelSide.BOTTOM);
+				MakeVoxelFace(x, y, z, VoxelSide.BOTTOM);
 			}
 		}
 		else
 		{
-			make_voxel_face(x, y, z, VoxelSide.BOTTOM);
+			MakeVoxelFace(x, y, z, VoxelSide.BOTTOM);
 		}
 
 		if (_getVoxelInBounds(x + 1, y, z))
 		{
-			if (_check_if_voxel_cause_render(x + 1, y, z))
+			if (_checkIfVoxelCausesRender(x + 1, y, z))
 			{
-				make_voxel_face(x, y, z, VoxelSide.EAST);
+				MakeVoxelFace(x, y, z, VoxelSide.EAST);
 			}
 		}
 		else
 		{
-			make_voxel_face(x, y, z, VoxelSide.EAST);
+			MakeVoxelFace(x, y, z, VoxelSide.EAST);
 		}
 
 		if (_getVoxelInBounds(x - 1, y, z))
 		{
-			if (_check_if_voxel_cause_render(x - 1, y, z))
+			if (_checkIfVoxelCausesRender(x - 1, y, z))
 			{
-				make_voxel_face(x, y, z, VoxelSide.WEST);
+				MakeVoxelFace(x, y, z, VoxelSide.WEST);
 			}
 		}
 		else
 		{
-			make_voxel_face(x, y, z, VoxelSide.WEST);
+			MakeVoxelFace(x, y, z, VoxelSide.WEST);
 		}
 
 		if (_getVoxelInBounds(x, y, z + 1))
 		{
-			if (_check_if_voxel_cause_render(x, y, z + 1))
+			if (_checkIfVoxelCausesRender(x, y, z + 1))
 			{
-				make_voxel_face(x, y, z, VoxelSide.NORTH);
+				MakeVoxelFace(x, y, z, VoxelSide.NORTH);
 			}
 		}
 		else
 		{
-			make_voxel_face(x, y, z, VoxelSide.NORTH);
+			MakeVoxelFace(x, y, z, VoxelSide.NORTH);
 		}
 
 		if (_getVoxelInBounds(x, y, z - 1))
 		{
-			if (_check_if_voxel_cause_render(x, y, z - 1))
+			if (_checkIfVoxelCausesRender(x, y, z - 1))
 			{
-				make_voxel_face(x, y, z, VoxelSide.SOUTH);
+				MakeVoxelFace(x, y, z, VoxelSide.SOUTH);
 			}
 		}
 		else
 		{
-			make_voxel_face(x, y, z, VoxelSide.SOUTH);
+			MakeVoxelFace(x, y, z, VoxelSide.SOUTH);
 		}
 	}
 
-	private bool _check_if_voxel_cause_render(int x, int y, int z)
+	private bool _checkIfVoxelCausesRender(int x, int y, int z)
 	{
 		if (voxels[x][y][z] == null || voxels[x][y][z] == -1)
 		{
@@ -263,7 +263,7 @@ public partial class VoxelChunk : Node3D
 		return false;
 	}
 
-	private void make_voxel_face(int x, int y, int z, VoxelSide face)
+	private void MakeVoxelFace(int x, int y, int z, VoxelSide face)
 	{
 
 		var voxel_data = World.GetVoxelByIndex(voxels[x][y][z].Value);
