@@ -477,7 +477,7 @@ public partial class VoxelChunk : Node3D
 		if (IsPositionWithinChunkBounds(position) == true)
 		{
 
-			position = position*GlobalTransform;
+			position = position * GlobalTransform;
 
 			position.X = (float)Math.Floor(position.X / _voxelSize);
 			position.Y = (float)Math.Floor(position.Y / _voxelSize);

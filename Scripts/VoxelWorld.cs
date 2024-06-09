@@ -5,69 +5,69 @@ using System.Collections.Generic;
 public partial class VoxelWorld : Node3D
 {
 	Dictionary<string, Voxel> voxelDictionary = new(){
-		{
-			"Stone",
-			new Voxel() {
-				IsTransparent = false,
-				IsSolid = true,
-				texture = new Vector2I(0,0),
-				Textures = new()
-			}
-		},
-		{
-			"Bedrock",
-			new Voxel() {
-				IsTransparent = false,
-				IsSolid = true,
-				texture = new Vector2I(2,0),
-				Textures = new()
-			}
-		},
-		{
-			"Cobble",
-			new Voxel() {
-				IsTransparent = false,
-				IsSolid = true,
-				texture = new Vector2I(1,0),
-				Textures = new()
-			}
-		},
-		{
-			"Dirt",
-			new Voxel() {
-				IsTransparent = false,
-				IsSolid = true,
-				texture = new Vector2I(0,1),
-				Textures = new()
-			}
-		},
-		{
-			"Grass",
-			new Voxel() {
-				IsTransparent = false,
-				IsSolid = true,
-				texture = new Vector2I(0,1),
-				Textures =
-				new() {
-					{
-						VoxelSide.TOP, new Vector2I(2,1)
-					},
-					{
-						VoxelSide.NORTH, new Vector2I(1,1)
-					},
-					{
-						VoxelSide.SOUTH, new Vector2I(1,1)
-					},
-					{
-						VoxelSide.EAST, new Vector2I(1,1)
-					},
-					{
-						VoxelSide.WEST, new Vector2I(1,1)
+			{
+				"Stone",
+				new Voxel() {
+					IsTransparent = false,
+					IsSolid = true,
+					texture = new Vector2I(0,0),
+					Textures = new()
+				}
+			},
+			{
+				"Bedrock",
+				new Voxel() {
+					IsTransparent = false,
+					IsSolid = true,
+					texture = new Vector2I(2,0),
+					Textures = new()
+				}
+			},
+			{
+				"Cobble",
+				new Voxel() {
+					IsTransparent = false,
+					IsSolid = true,
+					texture = new Vector2I(1,0),
+					Textures = new()
+				}
+			},
+			{
+				"Dirt",
+				new Voxel() {
+					IsTransparent = false,
+					IsSolid = true,
+					texture = new Vector2I(0,1),
+					Textures = new()
+				}
+			},
+			{
+				"Grass",
+				new Voxel() {
+					IsTransparent = false,
+					IsSolid = true,
+					texture = new Vector2I(0,1),
+					Textures =
+					new() {
+						{
+							VoxelSide.TOP, new Vector2I(2,1)
+						},
+						{
+							VoxelSide.NORTH, new Vector2I(1,1)
+						},
+						{
+							VoxelSide.SOUTH, new Vector2I(1,1)
+						},
+						{
+							VoxelSide.EAST, new Vector2I(1,1)
+						},
+						{
+							VoxelSide.WEST, new Vector2I(1,1)
+						}
 					}
 				}
 			}
-		}
-	};
+		};
 
 	List<string> _voxelList = new();
 
@@ -121,17 +121,15 @@ public partial class VoxelWorld : Node3D
 				{
 					VoxelChunk newChunk = (VoxelChunk)ChunkScene.Instantiate();
 					_chunkHolderNode.AddChild(newChunk);
-
-					Transform3D newTransform = new()
-					{
-						Origin = new Vector3(
+					
+					var transform = newChunk.GlobalTransform;
+					transform.Origin = new Vector3(
 							x * ChunkSize.X * VOXEL_UNIT_SIZE,
 							y * ChunkSize.Y * VOXEL_UNIT_SIZE,
 							z * ChunkSize.Z * VOXEL_UNIT_SIZE
-						)
-					};
+						);
+					newChunk.GlobalTransform = transform;
 
-					newChunk.GlobalTransform = newTransform;
 					newChunk.World = this;
 
 					newChunk.Setup(ChunkSize.X, ChunkSize.Y, ChunkSize.Z, VOXEL_UNIT_SIZE);
