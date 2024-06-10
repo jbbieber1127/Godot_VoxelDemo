@@ -160,7 +160,7 @@ public partial class VoxelWorld : Node3D
 		return _voxelList.IndexOf(voxelName);
 	}
 
-	public void SetWorldVoxel(Vector3I position, int voxel)
+	public void SetWorldVoxel(Vector3 position, int? voxel)
 	{
 		foreach (var chunk in _chunkHolderNode.GetChildren())
 		{

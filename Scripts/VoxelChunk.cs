@@ -472,12 +472,11 @@ public partial class VoxelChunk : Node3D
 		return null;
 	}
 
-	public bool SetVoxelAtPosition(Vector3 position, int voxel)
+	public bool SetVoxelAtPosition(Vector3 position, int? voxel)
 	{
 		if (IsPositionWithinChunkBounds(position) == true)
 		{
-
-			position = position * GlobalTransform;
+			position *= GlobalTransform;
 
 			position.X = (float)Math.Floor(position.X / _voxelSize);
 			position.Y = (float)Math.Floor(position.Y / _voxelSize);

@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://v1psrx4pytm5"]
+[gd_scene load_steps=11 format=3 uid="uid://v1psrx4pytm5"]
 
 [ext_resource type="Texture2D" uid="uid://bt4vkj6lqtxwq" path="res://UI_Assets/Crosshair.png" id="1"]
 [ext_resource type="Script" path="res://Scripts/VoxelWorld.cs" id="1_ha354"]
 [ext_resource type="Texture2D" uid="uid://fr81553uodun" path="res://UI_Assets/Inventory_Slot.png" id="2"]
+[ext_resource type="Script" path="res://Scripts/Player_Camera.cs" id="2_gmm5w"]
 [ext_resource type="Texture2D" uid="uid://bp5gae6475dml" path="res://UI_Assets/32-32_white.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://dtavwcpku1h7q" path="res://Rigid_Sphere.tscn" id="3_4mh4h"]
 [ext_resource type="Texture2D" uid="uid://tasa3m104rid" path="res://Voxel_Terrain_System/2D_Assets/Tileset_UI.png" id="4"]
 
 [sub_resource type="CanvasItemMaterial" id="1"]
@@ -33,6 +35,9 @@ script = ExtResource("1_ha354")
 
 [node name="Player_Camera" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 16, 16)
+script = ExtResource("2_gmm5w")
+path_to_voxel_world = NodePath("../Voxel_World")
+physics_object_scene = ExtResource("3_4mh4h")
 
 [node name="View_Camera" type="Camera3D" parent="Player_Camera"]
 current = true
@@ -71,7 +76,6 @@ layout_mode = 2
 texture_normal = ExtResource("2")
 
 [node name="Select_Texture" type="TextureRect" parent="Player_Camera/UI/Voxel_Inventory/Voxel_Button"]
-visible = false
 self_modulate = Color(0, 1, 0, 1)
 material = SubResource("1")
 layout_mode = 0
@@ -92,7 +96,6 @@ layout_mode = 2
 texture_normal = ExtResource("2")
 
 [node name="Select_Texture" type="TextureRect" parent="Player_Camera/UI/Voxel_Inventory/Voxel_Button2"]
-visible = false
 self_modulate = Color(0, 1, 0, 1)
 material = SubResource("1")
 layout_mode = 0
@@ -113,7 +116,6 @@ layout_mode = 2
 texture_normal = ExtResource("2")
 
 [node name="Select_Texture" type="TextureRect" parent="Player_Camera/UI/Voxel_Inventory/Voxel_Button3"]
-visible = false
 self_modulate = Color(0, 1, 0, 1)
 material = SubResource("1")
 layout_mode = 0
@@ -134,7 +136,6 @@ layout_mode = 2
 texture_normal = ExtResource("2")
 
 [node name="Select_Texture" type="TextureRect" parent="Player_Camera/UI/Voxel_Inventory/Voxel_Button4"]
-visible = false
 self_modulate = Color(0, 1, 0, 1)
 material = SubResource("1")
 layout_mode = 0
