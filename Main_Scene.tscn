@@ -45,7 +45,6 @@ fov = 70.0
 far = 100.0
 
 [node name="UI" type="Control" parent="Player_Camera"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
